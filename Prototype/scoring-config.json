@@ -1,0 +1,13 @@
+{
+  "ExperienceWeight": 30,
+  "PriceWeight": 25,
+  "TimelineWeight": 15,
+  "WarrantyWeight": 15,
+  "TeamApproachWeight": 15,
+  "ExperienceCountWeight": 40,
+  "ExperienceSizeWeight": 40,
+  "ExperienceSpreadWeight": 20,
+  "BudgetCad": 260000,
+  "MaximumTimelineWeeks": 16,
+  "ExperienceWindowYears": 5
+}

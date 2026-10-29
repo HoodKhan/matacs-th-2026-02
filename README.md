@@ -14,6 +14,8 @@
 - [Proposal Data](Prototype/proposals.json)
 - [Scoring Configuration](Prototype/scoring-config.json)
 - [Prototype Instructions](Prototype/README-prototype.md)
+- [Supporting Document 1](Brainstorming/Supporting%20doc%201.jpeg)
+- [Supporting Document 2](Brainstorming/Supporting%20doc%202.jpeg)
 
 ## AI Tool Usage
 

@@ -6,7 +6,7 @@
 
 ## Repository Files
 
-- [Process Flow Diagram](diagram/process-flow%20diagram.drawio.png)
+- [Process Flow Diagram](Diagram/process-flow%20diagram.drawio.png)
 - [Design Write-up](WRITEUP.md)
 - [AI Prompts](PROMPTS.md)
 - [Proposal Ranking](ranking.json)

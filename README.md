@@ -1,40 +1,24 @@
-\# AI Proposal Triage Design
+# AI Proposal Triage Design
 
+**Full Name:** Hood Ilyas  
+**Reference:** MATACS-TH-2026-02  
+**Time Spent:** 6 hours
 
+## Repository Files
 
-\*\*Full Name:\*\* Hood Ilyas
+- [Process Flow Diagram](diagram/)
+- [Design Write-up](WRITEUP.md)
+- [AI Prompts](PROMPTS.md)
+- [Proposal Ranking](ranking.json)
+- [C# Prototype](Prototype/Program.cs)
+- [Proposal Data](Prototype/proposals.json)
+- [Scoring Configuration](Prototype/scoring-config.json)
+- [Prototype Instructions](Prototype/README-prototype.md)
 
-\*\*Reference:\*\* MATACS-TH-2026-02
+## AI Tool Usage
 
-\*\*Time Spent:\*\* 6 hours
+I used ChatGPT to develop the C# prototype, work on `ranking.json` and `PROMPTS.md`, and refine my scoring logic. One point where I disagreed with ChatGPT was its suggestion to use fixed bands for scoring relevant experience. I chose relative scoring instead because it compares proposals directly against the strongest result in each factor.
 
+Relevant experience has three factors: qualifying installations, installation size in kW, and years of experience. Fixed bands can give different proposals the same score when they fall within the same range. With relative scoring, I compare each proposal against the highest value for each factor using the formula `(proposal value / highest value) × 100`.
 
-
-\## Repository Files
-
-
-
-\- \[Process Flow Diagram](diagram/)
-
-\- \[Design Write-up](WRITEUP.md)
-
-\- \[AI Prompts](PROMPTS.md)
-
-\- \[Proposal Ranking](ranking.json)
-
-\- \[C# Prototype](prototype/Program.cs)
-
-\- \[Proposal Data](prototype/proposals.json)
-
-\- \[Scoring Configuration](prototype/scoring-config.json)
-
-\- \[Prototype Instructions](prototype/README-prototype.md)
-
-
-
-\## AI Tool Usage
-
-
-
-I used ChatGPT to develop the C# prototype and help with ranking.JSON and Prompts, and tried to polish my logic. There was one moment where chatgpt was more aligned towards using Fixed band approach for scoring the relevant experience which i disagreed with and instead i came up with relative scoring system for the problem because relative scoring method was more consistent than fixed band. \*\*Here is how:\*\* Relevant experience had three factors Qualifying installations, Size of installations in KW, and experience in number of years. with fixed bands we could reach problems like, more proposals having the same score due to lying in that specific range. But with Relative Scoring i compared every point with the highest in the list e.g. (No. installation / Highest no. of Installation)\* 100, for all three factors separately than i gave weighted score for every factor based on priority e.g. Qualifying installations = 40%, Size of installations in KW = 40%, experience in no. of years = 20%. and finally put them in below formula to come up with an efficient and consistent score, The formula is; Score = (Relative scoring \* Weighted score)+(Relative scoring \* Weighted score)+(Relative scoring \*Weighted score) fpr the three factors and you apply this formula for all proposals and convert to configured scoring criteria e.g. 30%.
-
+I assigned weights of 40% to qualifying installations, 40% to installation size, and 20% to years of experience. I then calculate the weighted average of these relative scores and apply the configured 30% weight for the overall experience criterion. This makes the scoring more consistent and allows proposals to be compared using the same formula.
